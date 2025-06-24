@@ -5,13 +5,20 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Add other pages here later */}
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Navbar />
+
+        {/* Main content area grows to fill space */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* You can add more routes here */}
+          </Routes>
+        </main>
+
+        <Footer />
+      </Router>
+    </div>
   );
 }
